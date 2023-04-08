@@ -135,7 +135,9 @@ void MotorApi::RegisterGame(const char* gameName) {
 
 	auto map = _mScene->AddGameobject("map");
 	map->AddComponent("MeshRenderer");
-	map->GetComponent<MeshRenderer>()->Start("map", "Track.mesh", "FalconRedone/FalconMat");
+	map->GetComponent<MeshRenderer>()->Start("map", "bank_course.mesh", "FalconRedone/FalconMat");
+	map->GetNode()->SetScale(12,12,12);
+	map->GetNode()->SetDirection(90,0,0);
 	map->AddComponent("RigidBodyComponent");
 	map->GetComponent<RigidBodyComponent>()->Start(0);
 	map->AddComponent("PlayerController");
@@ -143,6 +145,7 @@ void MotorApi::RegisterGame(const char* gameName) {
 	auto ship_gObj = _mScene->AddGameobject("ship");
 	ship_gObj->AddComponent("MeshRenderer");
 	ship_gObj->GetComponent<MeshRenderer>()->Start("ship", "BlueFalcon.mesh", "FalconRedone/FalconMat");
+	//ship_gObj->GetNode()->SetDirection(0, 0, 90);
 	ship_gObj->AddComponent("ParticleSystem");
 	//ship_gObj->AddComponent<ParticleSystem>("fire", _mScene->GetRender(), "Racers/Fire");
 
