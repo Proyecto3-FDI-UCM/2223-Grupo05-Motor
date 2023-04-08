@@ -1,0 +1,16 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.26/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
+C:/Program Files/CMake/share/cmake-3.26/Modules/CMakePackageConfigHelpers.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/CheckCSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/CheckIncludeFile.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/CheckLibraryExists.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/FindThreads.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.26/Modules/WriteBasicConfigVersionFile.cmake
+C:/Users/jacob/OneDrive/Escritorio/Juego/Juego_de_autos/Motor/Dependecies/OpenSteer/src/third-party/glfw/CMake/modules/FindVulkan.cmake
+C:/Users/jacob/OneDrive/Escritorio/Juego/Juego_de_autos/Motor/Dependecies/OpenSteer/src/third-party/glfw/CMakeLists.txt
+C:/Users/jacob/OneDrive/Escritorio/Juego/Juego_de_autos/Motor/Dependecies/OpenSteer/src/third-party/glfw/src/glfw3.pc.in
+C:/Users/jacob/OneDrive/Escritorio/Juego/Juego_de_autos/Motor/Dependecies/OpenSteer/src/third-party/glfw/src/glfw3Config.cmake.in
+C:/Users/jacob/OneDrive/Escritorio/Juego/Juego_de_autos/Motor/Dependecies/OpenSteer/src/third-party/glfw/src/glfw_config.h.in

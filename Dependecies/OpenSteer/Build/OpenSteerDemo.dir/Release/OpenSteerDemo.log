@@ -1,0 +1,17 @@
+﻿  Building Custom Rule C:/Users/jacob/OneDrive/Escritorio/Juego/Juego_de_autos/Motor/Dependecies/OpenSteer/src/CMakeLists.txt
+  glad.c
+  OpenSteerDemo.cpp
+  Draw.cpp
+  Color.cpp
+  main.cpp
+  Boids.cpp
+  CaptureTheFlag.cpp
+  LowSpeedTurn.cpp
+  MapDrive.cpp
+  MultiplePursuit.cpp
+  OneTurning.cpp
+  Pedestrian.cpp
+  PedestriansWalkingAnEight.cpp
+  Soccer.cpp
+  Generating Code...
+  OpenSteerDemo.vcxproj -> C:\Users\jacob\OneDrive\Escritorio\Juego\Juego_de_autos\Motor\Dependecies\OpenSteer\Build\Release\OpenSteerDemo.exe

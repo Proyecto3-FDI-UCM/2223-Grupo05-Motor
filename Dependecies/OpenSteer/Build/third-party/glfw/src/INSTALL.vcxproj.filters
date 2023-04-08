@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\jacob\OneDrive\Escritorio\Juego\Juego_de_autos\Motor\Dependecies\OpenSteer\Build\CMakeFiles\1b1ab50dfa2f738045fc0da21cefd866\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{E64FFDA8-B212-39F2-98C1-BBC1AEA477C3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
