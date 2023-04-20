@@ -171,10 +171,10 @@ void GameObject::Update(float dt) {
 		GetTransform()->SetPosition(GetTransform()->GetPosition() + localVelocity);
 
 
-		if(GetTransform()->GetPosition().GetY() < -45)
-		{
-			GetTransform()->SetPosition(LMVector3(0,5,0));
-		}
+		//if(GetTransform()->GetPosition().GetY() < -45)
+		//{
+		//	GetTransform()->SetPosition(LMVector3(0,5,0));
+		//}
 	}
 }
 

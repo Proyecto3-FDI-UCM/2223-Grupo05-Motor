@@ -154,7 +154,7 @@ material AtlasMaterial {
             diffuse 0.8 0.8 0.8 1.0
             specular 0.5 0.0 0 0 0
             lighting off
-
+            alpha_rejection greater 150
             texture_unit {
                 texture AtlasMain00_t.png
                 tex_address_mode wrap
@@ -234,6 +234,19 @@ material WaterMaterial {
         }
     }
 }
-
+material PanelsMaterial {
+    receive_shadows on
+    technique {
+        pass {
+            lighting off
+            texture_unit {
+                texture Panels_t.png
+                tex_address_mode wrap
+                colour_op modulate
+            }
+            
+        }
+    }
+}
 
 
