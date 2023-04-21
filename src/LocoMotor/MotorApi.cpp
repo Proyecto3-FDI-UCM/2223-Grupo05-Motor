@@ -22,6 +22,8 @@
 #include <ParticleSystem.h>
 #include <Camera.h>
 #include <EnemyAI.h>
+#include "CallBackBullet.h"
+#include "LmVectorConverter.h"
 
 //#include <tweeners/builder.hpp>
 //#include <tweeners/easing.hpp>
@@ -107,6 +109,7 @@ void MotorApi::RegisterGame(const char* gameName) {
 	ship_gObj->AddComponent("MeshRenderer");
 	ship_gObj->GetComponent<MeshRenderer>()->Start("ship", "BlueFalcon.mesh", "");// or BlueFalconAlt.mesh
 	ship_gObj->AddComponent("ParticleSystem");
+	ship_gObj->AddComponent("AudioListener");
 
 	ship_gObj->AddComponent("RigidBodyComponent");
 	ship_gObj->GetComponent<RigidBodyComponent>()->Start(1);
@@ -167,7 +170,7 @@ void MotorApi::RegisterGame(const char* gameName) {
 
 	OgreWrapper::Spline* nuevaSpl = new OgreWrapper::Spline();
 	for (int i = 0; i < 18; i++) {
-		nuevaSpl->AddPoint(Ogre::Vector3(LMVector3(positionsList[i])));
+		nuevaSpl->AddPoint(LmToOgre(LMVector3(positionsList[i])));
 		auto wayPoint = _mScene->AddGameobject("WayPoint" + i);
 		wayPoint->AddComponent("Transform");
 		wayPoint->AddComponent("MeshRenderer");
@@ -188,7 +191,7 @@ void MotorApi::RegisterGame(const char* gameName) {
 		enemy_gObj->SetPosition(LMVector3(-70 + i * 35, 3.0f, -80));
 
 		enemy_gObj->AddComponent("EnemyAI");
-		enemy_gObj->GetComponent<EnemyAI>()->Start(nuevaSpl, -70 + i * 35);
+		enemy_gObj->GetComponent<EnemyAI>()->Start(nuevaSpl, -70.f + i * 35.f);
 	}
 
 	std::vector<GameObject*> waypointBalls = std::vector<GameObject*>();
@@ -232,7 +235,7 @@ void MotorApi::RegisterGame(const char* gameName) {
 	//}
 	for (int i = 1; i < waypointBalls.size(); i++) {
 		waypointBalls[i]->SetScale(LMVector3(3.0f, 3.0f, 3.0f));
-		waypointBalls[i]->SetPosition(LMVector3::OgreToLm(nuevaSpl->Interpolate((float) i / maxBalls)));
+		waypointBalls[i]->SetPosition(OgreToLm(nuevaSpl->Interpolate((float) i / maxBalls)));
 	}
 		
 #pragma region All Components Started
@@ -250,7 +253,9 @@ void MotorApi::Init() {
 	PhysicsManager::Init();
 	InputManager::Get();
 	_scnManager = LocoMotor::SceneManager::Init();
-
+	PhysicsManager::GetInstance()->setContactStartCallback(contactStartBullet);
+	PhysicsManager::GetInstance()->setContactProcessCallback(contactProcessedBullet);
+	PhysicsManager::GetInstance()->setContactEndedCallback(contactExitBullet);
 	auto cmpFac = ComponentsFactory::Init();
 	cmpFac->RegisterComponent<AudioSource>("AudioSource");
 	cmpFac->RegisterComponent<AudioListener>("AudioListener");

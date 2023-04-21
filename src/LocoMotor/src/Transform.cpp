@@ -2,6 +2,7 @@
 #include "GameObject.h"
 #include "RigidBodyComponent.h"
 #include "Node.h"
+#include "LmVectorConverter.h"
 
 LocoMotor::Transform::Transform() {
 	_position = LMVector3();
@@ -125,19 +126,19 @@ void LocoMotor::Transform::LookAt(const LMVector3& lookPos, const LMVector3& up)
 
 void LocoMotor::Transform::SetLocalPosition(const LMVector3& newPosition) {
 	_position = newPosition;
-	_gObjNode->SetPosition(newPosition.GetX(), newPosition.GetY(), newPosition.GetZ());
+	_gObjNode->SetPosition((float)newPosition.GetX(), (float) newPosition.GetY(), (float) newPosition.GetZ());
 }
 
 void LocoMotor::Transform::SetLocalRotation(const LMQuaternion& newRotation) {
 	_direction = newRotation;
 	_direction.Normalize();
-	Ogre::Quaternion a = newRotation.LmToOgre(newRotation);
+	Ogre::Quaternion a = LmToOgre(newRotation);
 	_gObjNode->SetOrientation(a);
 }
 
 void LocoMotor::Transform::SetLocalScale(const LMVector3& newSize) {
 	_scale = newSize;
-	_gObjNode->SetScale(newSize.GetX(), newSize.GetY(), newSize.GetZ());
+	_gObjNode->SetScale((float)newSize.GetX(), (float)newSize.GetY(), (float)newSize.GetZ());
 }
 
 void LocoMotor::Transform::SetPhysPosition(const LMVector3& newPosition) {

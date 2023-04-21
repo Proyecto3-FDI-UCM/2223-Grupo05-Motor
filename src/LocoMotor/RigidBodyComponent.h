@@ -7,7 +7,7 @@ class LMQuaternion;
 class btRigidBody;
 class MeshStrider;
 namespace PhysicsWrapper {
-	class RigidBodyInfo;
+	struct RigidBodyInfo;
 	class BulletRigidBody;
 }
 namespace LocoMotor {
@@ -53,6 +53,8 @@ namespace LocoMotor {
 		/// @brief 
 		/// @return 
 		btRigidBody* getBody();
+		/// @brief Convert the body to be a Trigger(No contact Response)
+		void beATrigger();
 		/// @brief Methods to return RaycastInfo
 		bool GetRaycastHit(LMVector3 from, LMVector3 to);
 		LMVector3 GetraycastHitPoint(LMVector3 from, LMVector3 to);
@@ -68,6 +70,7 @@ namespace LocoMotor {
 		float _angDamping;
 		bool _gravity;
 		MeshStrider* _ms;
+		bool _trigger = false;
 
 	};
 }
