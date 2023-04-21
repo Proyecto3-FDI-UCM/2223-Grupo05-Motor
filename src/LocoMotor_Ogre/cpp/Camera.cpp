@@ -21,8 +21,8 @@ OgreWrapper::Camera::Camera(Ogre::Camera* camera) {
 	vp = OgreWrapper::OgreManager::GetInstance()->GetRenderWindow()->addViewport(_mCamera, Camera::_zOrder);
 	Camera::_zOrder++;
 	vp->setBackgroundColour(Ogre::ColourValue(0.6f, 0.7f, 0.8f));
-	Ogre::CompositorManager::getSingleton().addCompositor(vp, "B&W");
-	Ogre::CompositorManager::getSingleton().setCompositorEnabled(vp, "B&W", true);
+	//Ogre::CompositorManager::getSingleton().addCompositor(vp, "Invert");
+	//Ogre::CompositorManager::getSingleton().setCompositorEnabled(vp, "Invert", true);
 
 }
 
