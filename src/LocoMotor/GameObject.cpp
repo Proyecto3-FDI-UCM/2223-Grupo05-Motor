@@ -21,7 +21,7 @@ GameObject::GameObject(OgreWrapper::Node* node) {
 	_node = node;
 	_componentsByName = {};
 
-	physicsBasedMovement = true;
+	physicsBasedMovement = false;
 
 	tiltAmount = 0.0f; //TEMPORAL
 }
