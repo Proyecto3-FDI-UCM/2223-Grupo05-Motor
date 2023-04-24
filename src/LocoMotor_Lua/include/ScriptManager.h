@@ -1,21 +1,27 @@
 #ifndef _SCRIPT_MANAGER_H
 #define _SCRIPT_MANAGER_H
 #pragma once
+#ifdef _MOTORDLL
+#define MOTOR_API __declspec(dllexport)
+#else
+#define MOTOR_API __declspec(dllimport)
+#endif
+
 #include "Singleton.h"
 #include <string>
 
-class lua_State;
+struct lua_State;
 namespace luabridge {
 	class LuaRef;
 }
 
 
 namespace LocoMotor {
-	//class SceneManager;
+	class SceneManager;
 	class GameObject;
 	class Scene;
-	class ScriptManager : public Singleton<ScriptManager> {
-		friend Singleton<ScriptManager>;
+	class MOTOR_API ScriptManager : public Singleton<ScriptManager> {
+	    friend Singleton<ScriptManager>;
 	public:
 		/*bool Init();*/
 		void LoadSceneFromFile(std::string path);
@@ -29,7 +35,7 @@ namespace LocoMotor {
 		~ScriptManager();
 
 		lua_State* luaState;
-		//SceneManager* scMan;
+		SceneManager* scMan;
 
 	};
 }
